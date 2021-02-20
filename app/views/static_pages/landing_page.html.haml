@@ -26,6 +26,15 @@
       %form.d-flex
         %input.form-control.me-2{"aria-label" => "Search", :placeholder => "Search", :type => "search"}/
         %button.btn.btn-outline-success{:type => "submit"} Search
+        
 .container-fluid
-  %h1 Home
-  = link_to "privacy_policy", privacy_policy_path
+  %h1 
+    Home
+    
+  = link_to  privacy_policy_path do
+    .fas.fa-file-invoice
+    Privacy policy
+  
+  = link_to courses_path do
+    .fa.fa-book
+    Course
