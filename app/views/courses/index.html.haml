@@ -1,4 +1,6 @@
-%h1 Listing courses
+%h1
+  Courses:
+  = @courses.count
 
 %table.table
   %thead
@@ -21,3 +23,5 @@
 %br
 
 = link_to 'New Course', new_course_path
+%br
+= link_to  "Back", root_path
