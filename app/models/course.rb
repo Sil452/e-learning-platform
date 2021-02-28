@@ -1,5 +1,5 @@
 class Course < ApplicationRecord
-  validates :title,  presence: true
+  validates :title, :language, :price, :level, :short_description,  presence: true
   validates :description, presence: true, length: { :minimum => 5 }
   
   extend FriendlyId
