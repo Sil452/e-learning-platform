@@ -1,12 +1,9 @@
 .card-columns
   - @users.each do |user|
     = render 'users/user', user: user
-    
-    .form-inline
+
   = search_form_for @q do |f|
-    = f.search_field :email_cont, placeholder: 'email'
-    = f.search_field :sign_in_count_eq, placeholder: 'sign in count'
-    = f.search_field :email_or_sign_in_count_eq, placeholder: 'email or sign in count'
+    = f.search_field :email_cont, placeholder: 'user email', class:"mt-2 form-control-sm"
     = f.submit
   .ml-2
   = link_to users_path do
@@ -28,9 +25,9 @@
       %tr
         %td= user.id
         %td= user.email
-        %td= user.created_at
+        %td= format_date user.created_at
         %td= user.sign_in_count
-        %td= user.current_sign_in_at
-        %td= user.last_sign_in_at
+        %td= format_date  user.current_sign_in_at
+        %td= format_date user.last_sign_in_at
         %td= user.current_sign_in_ip
         %td= user.last_sign_in_ip
