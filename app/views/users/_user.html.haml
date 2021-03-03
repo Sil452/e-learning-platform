@@ -1,14 +1,13 @@
-.p-2
-.card
+.card.mt-2
   .card-header
     .fa.fa-user
-    = user.email
+    %b= user.email
   .card-footer
     Signed up
-    = time_ago_in_words(user.created_at)
+    %b= time_ago_in_words(user.created_at)
     ago
   .card-footer
     .row
-    = 'Last sign in'
+    %b= 'Last sign in'
     = format_date user.last_sign_in_at
     
