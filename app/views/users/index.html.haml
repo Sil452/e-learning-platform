@@ -18,8 +18,7 @@
       %th= 'sign_in_count'.humanize
       %th= 'current_sign_in_at'.humanize
       %th= 'last_sign_in_at'.humanize
-      %th= 'current_sign_in_ip'.humanize
-      %th= 'last_sign_in_ip'.humanize
+      %th= 'teacher_courses'.humanize
   %tbody
     - @users.each do |user|
       %tr
@@ -29,5 +28,5 @@
         %td= user.sign_in_count
         %td= format_date  user.current_sign_in_at
         %td= format_date user.last_sign_in_at
-        %td= user.current_sign_in_ip
-        %td= user.last_sign_in_ip
+        %td= user.courses.count
+        
