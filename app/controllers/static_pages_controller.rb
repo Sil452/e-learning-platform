@@ -6,4 +6,8 @@ class StaticPagesController < ApplicationController
     @latest_couses = Course.all.limit(3).order(created_at: :desc)
     @ransack_courses = Course.ransack(params[:courses_search], search_key: :courses_search)
   end
+  
+  def activity
+    @activities = PublicActivity::Activity.all
+  end
 end

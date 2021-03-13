@@ -1,0 +1,9 @@
+- @activities.each do |activity|
+  .row
+  %p
+  = activity.trackable_type
+  = link_to activity.trackable, activity.trackable
+  was
+  = activity.key.split(".").last
+  by
+  = activity.owner
