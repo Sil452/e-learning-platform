@@ -1,9 +1,13 @@
-- @activities.each do |activity|
-  .row
-  %p
-  = activity.trackable_type
-  = link_to activity.trackable, activity.trackable
-  was
-  = activity.key.split(".").last
-  by
-  = activity.owner
+.text-center
+  %h3 Activities
+
+%ul.list-group
+  - @activities.each do |activity|
+    %li.list-group-item
+      %p
+      = activity.trackable_type
+      = link_to activity.trackable, activity.trackable
+      was
+      = activity.key.split(".").last
+      by
+      = activity.owner

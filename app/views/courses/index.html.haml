@@ -1,6 +1,9 @@
-%h1
-  Courses:
-  = @courses.count
+.text-center
+  %h3
+    Available courses:
+    .badge.badge-info
+      = @courses.count
+  %br
 
 .row
   .col-md-2
@@ -20,7 +23,7 @@
     = link_to courses_path do
       .fas.fa-sync
     
-  .col-md-10  
+  .col-md-8 
     .card-columns
       - @courses.each do |course|
         = render 'courses/course', course: course
