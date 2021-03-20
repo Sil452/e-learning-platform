@@ -25,4 +25,14 @@ class User < ApplicationRecord
     end
   end
   
+  validate :must_have_role, on: :update
+  
+  private
+  
+  def must_have_role
+    unless roles.any?
+      errors.add(:roles, "must have a role")
+    end
+  end
+  
 end

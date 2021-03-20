@@ -3,7 +3,7 @@ class ApplicationPolicy
 
   def initialize(user, record)
     @user = user
-    @record = record
+    @course = record
   end
 
   def index?
