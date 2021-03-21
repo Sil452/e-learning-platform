@@ -1,7 +1,7 @@
 .card.mt-2
   .card-header
     .fa.fa-user
-    %b= user.email
+    = link_to user.email, user_path(user)
   .card-footer
     Signed up
     %b= time_ago_in_words(user.created_at)
