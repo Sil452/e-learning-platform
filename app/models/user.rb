@@ -30,6 +30,10 @@ class User < ApplicationRecord
   
   validate :must_have_role, on: :update
   
+  def online?
+    updated_at > 2.minute.ago
+  end
+  
   private
   
   def must_have_role

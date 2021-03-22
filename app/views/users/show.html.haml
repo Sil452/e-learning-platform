@@ -2,7 +2,11 @@
 
 .card-header
   .text-center
-    %h5 my courses
+    %h4
+      My courses(
+      = @user.courses.count
+      )
+    %br
 .card-footer
   .row
     - @user.courses.each do |course|
