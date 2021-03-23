@@ -2,6 +2,4 @@
 
 = render 'lessons/lesson', lesson: @lesson
 
-= link_to 'Back', :back
-
-// or course(@lesson.course)
+= link_to 'Back', course_path(@lesson.course)

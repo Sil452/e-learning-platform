@@ -5,7 +5,8 @@
   - @activities.each do |activity|
     %li.list-group-item
       %p
-      = activity.trackable_type
+      This
+      = activity.trackable_type.downcase
       = link_to activity.trackable, activity.trackable
       was
       = activity.key.split(".").last
