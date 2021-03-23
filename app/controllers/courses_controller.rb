@@ -19,9 +19,6 @@ class CoursesController < ApplicationController
   end
 
   # GET /courses/1/edit
-  def edit
-    authorize @course
-  end
 
   # POST /courses or /courses.json
   def create
@@ -38,6 +35,10 @@ class CoursesController < ApplicationController
         format.json { render json: @course.errors, status: :unprocessable_entity }
       end
     end
+  end
+  
+  def edit
+   authorize @course
   end
 
   # PATCH/PUT /courses/1 or /courses/1.json
