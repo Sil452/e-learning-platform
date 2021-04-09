@@ -47,3 +47,4 @@ end
     price: 0
   }])
 end
+PublicActivity.enabled = true
