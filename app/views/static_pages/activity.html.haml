@@ -1,5 +1,12 @@
+- content_for :title do
+  WeLearn
+  \/
+  Activities
+
 .text-center
   %h3 Activities
+  
+%p
 
 %ul.list-group
   - @activities.each do |activity|
@@ -7,7 +14,7 @@
       %p
       This
       = activity.trackable_type.downcase
-      = link_to activity.trackable, activity.trackable
+      = link_to activity.trackable
       was
       = activity.key.split(".").last
       by
