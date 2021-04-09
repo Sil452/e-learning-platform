@@ -3,7 +3,7 @@
     %h1 Edit lesson
   .card-body
     = render 'form'
-
-= link_to 'Show', course_lesson_path(@course, @lesson)
-\|
-= link_to 'Back', :back
+  .card-footer
+    = link_to 'Show', course_lesson_path(@course, @lesson)
+    \|
+    = link_to 'Back', :back
