@@ -1,35 +1,12 @@
 .text-center
   %h3 Users
+  %br
+= search_form_for @q do |f|
+  = f.search_field :email_cont, placeholder: 'user email', class:"form-control-sm width-100%",style: 'width: 288px;' 
+  = f.submit
 
 .card-columns
   - @users.each do |user|
     = render 'users/user', user: user
 
-  = search_form_for @q do |f|
-    = f.search_field :email_cont, placeholder: 'user email', class:"mt-2 form-control-sm"
-    = f.submit
-  .ml-2
-  = link_to users_path do
-    .fas.fa-sync
-
-%table.table.table-bordered
-  %thead
-    %tr
-      %th id
-      %th= sort_link(@q, :email)
-      %th created_at
-      %th= 'sign_in_count'.humanize
-      %th= 'current_sign_in_at'.humanize
-      %th= 'last_sign_in_at'.humanize
-      %th= "user's_courses".humanize
-  %tbody
-    - @users.each do |user|
-      %tr
-        %td= user.id
-        %td= user.email
-        %td= format_date user.created_at
-        %td= user.sign_in_count
-        %td= format_date  user.current_sign_in_at
-        %td= format_date user.last_sign_in_at
-        %td= user.courses.count
         

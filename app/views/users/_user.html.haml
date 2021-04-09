@@ -7,6 +7,9 @@
         .text-danger.fas.fa-circle
     = link_to user.email, user_path(user)
   .card-footer
+    User's courses
+    %b= user.courses.count
+  .card-footer
     Signed up
     %b= time_ago_in_words(user.created_at)
     ago
