@@ -36,6 +36,10 @@ class User < ApplicationRecord
     updated_at > 2.minute.ago
   end
   
+  def buy_course(course)
+    self.enrollments.create(course: course, price: course.price)
+  end
+  
   private
   
   def must_have_role
@@ -44,8 +48,5 @@ class User < ApplicationRecord
     end
   end
   
-  def buy_course(course)
-    self.enrollments.create(course: course, price: course.price)
-  end
   
 end

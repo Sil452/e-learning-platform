@@ -1,6 +1,6 @@
 class EnrollmentsController < ApplicationController
   before_action :set_enrollment, only: %i[ show edit update destroy ]
-  before_action :set_course, only[:new, :create]
+  before_action :set_course, only: %i[new create]
   
   def index
     @enrollments = Enrollment.all
@@ -17,7 +17,7 @@ class EnrollmentsController < ApplicationController
   end
 
   def create
-   if course.price > 0
+   if @course.price > 0
      flash[:alert] = "We haven't implemented a payment functionality yet, sorry"
      redirect_to new_course_enrollment_path(@course)
    else
@@ -56,6 +56,6 @@ class EnrollmentsController < ApplicationController
     end
 
     def enrollment_params
-      params.require(:enrollment).permit(:course_id, :user_id, :rating, :review)
+      params.require(:enrollment).permit(:rating, :review)
     end
 end
