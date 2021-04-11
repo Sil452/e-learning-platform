@@ -1,7 +1,16 @@
-%h1 Editing enrollment
+- content_for :title do
+  WeLearn
+  \/
+  Edit enrollment
 
-= render 'form'
-
-= link_to 'Show', @enrollment
-\|
-= link_to 'Back', enrollments_path
+.card
+  .card-header
+    %h3 
+      .fa.fa-lock-open
+      Edit enrollment
+  .card-body
+    = render 'form'
+  .card-footer
+    = link_to 'Show', @enrollment
+    \|
+    = link_to 'Back', enrollments_path
