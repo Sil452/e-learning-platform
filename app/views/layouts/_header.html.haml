@@ -22,7 +22,12 @@
           = link_to users_path, class: 'nav-link' do
             .fa.fa-users
             Users
-  
+          
+        %li.nav-item{class: "#{'active font-weight-bold' if current_page?(users_path)}"}
+          = link_to enrollments_path, class: 'nav-link' do
+            .fa.fa-lock-open
+            Enrollments
+
       .form-inline.my-2.my-lg-0
         = search_form_for @ransack_courses, as: :courses_search, url: courses_path do |f|
           .input-group
