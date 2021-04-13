@@ -13,4 +13,4 @@
     = form_tag course_enrollments_path(@course) do
       = submit_tag "Buy now #{@course.price}", class: "btn btn-lg btn-success"
   .card-footer
-    = link_to 'Back', course_path(@course)
+    = link_to 'Back', course_enrollments_path(@course)

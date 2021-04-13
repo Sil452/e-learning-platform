@@ -8,7 +8,7 @@
 
 .card-header
   .text-center
-    %h4
+    %h5
       My courses(
       = @user.courses.count
       )
@@ -18,3 +18,15 @@
     - @user.courses.each do |course|
       .col-xs-12.col-md-3
         = link_to  course.title, course_path(course)
+.card-header
+  .text-center
+    %h5
+      My enrollment(
+      = @user.enrollments.count
+      )
+    %br
+.card-footer
+  .row
+    - @user.enrollments.each do |enrollment|
+      .col-xs-12.col-md-3
+        = link_to  enrollment.course.title, enrollment_path(enrollment)
