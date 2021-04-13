@@ -7,8 +7,12 @@
         .text-danger.fas.fa-circle
     = link_to user.email, user_path(user)
   .card-footer
-    User's courses
-    %b= user.courses.count
+    .row
+      .col-md-6
+        Teaching
+        %b= user.courses.count
+        Studying
+        %b= user.enrollments.count
   .card-footer
     Signed up
     %b= time_ago_in_words(user.created_at)
